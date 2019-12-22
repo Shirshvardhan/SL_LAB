@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM DETAILS</title>
+</head>
+<body>
+	<h1>RESULTS</h1>
+	<h5>{{msg}}</h5>
+	<form action="{{url_for('index')}}" method = "POST"  id = "t">
+		USN:(eg:1MS17IS112):<input type="text" name="usn"><br>
+		DOB:(dd/mm/yyyy):<input type="text" name="dob"><br>
+		MARKS1: <input type="number" name="m1" value="0" min="0">
+		MARKS2: <input type="number" name="m2" value="0" min="0">
+		MARKS3: <input type="number" name="m3" value="0" min="0">
+		<input type="submit" name="REGISTER" onclick="return validateForm(this)">
+	</form>
+</body>
+<script>
+		function validateForm(button)
+		{
+			var form = document.getElementById("t");
+			if (form.usn.value =="")
+			{
+				alert("ENTER USN");
+				return false;
+			}
+			if (form.dob.value =="")
+			{
+				alert("ENTER DOB");
+				return false;
+			}
+			if (form.m1.value =="")
+			{
+				alert("ENTER marks1");
+				return false;
+			}
+			if (form.m2.value =="")
+			{
+				alert("ENTER marks2");
+				return false;
+			}
+			if (form.m3.value =="")
+			{
+				alert("ENTER marks3");
+				return false;
+			}
+			else
+				return true;
+		}
+
+	</script>
+</html>
